@@ -51,6 +51,12 @@ header .title {
     width: 1.75rem;
     height: 2rem;
 }
+.password__copy img:hover {
+    cursor: pointer;
+    transition: linear 0.5s;
+    transform: scale(1.05) translateX(.2rem);
+    filter: saturate(1.5);
+}
 .password__opcion {
     display: flex;
     flex-direction: column;
@@ -90,6 +96,12 @@ header .title {
     border-radius: 50%;
     margin-top: -1rem;
 }
+.character__length input[type="range"]::-webkit-slider-thumb:hover {
+    cursor: pointer;
+    border: 2px solid var(--neon_green);
+    background-color: var(--very-dark_gray);
+    transition: 0.5s;
+}
 .container__checkbox {
     display: flex;
     flex-direction: column;
@@ -108,6 +120,12 @@ header .title {
     height: 2rem;
     border: 2px solid var(--gray);
     display: inline-block;
+}
+.container__checkbox label .checkmark:hover {
+    cursor: pointer;
+    border: 2px solid var(--neon_green);
+    background-color: var(--very-dark_gray);
+    transition: 0.5s;
 }
 .container__checkbox label input[type="checkbox"]:checked + .checkmark {
     border: none;
@@ -148,8 +166,24 @@ header .title {
     height: 5.6rem;
     border: none;
 }
-.generator img {
-    margin-left: 1.2rem;
+.generator:hover {
+    cursor: pointer;
+    border: 2px solid var(--neon_green);
+    background-color: var(--dark_gray);
+    color: var(--neon_green);
+    transition: 0.5s;
+}
+.generator .img__arrow {
+    width: 20px;
+    height: 20px;
+    background-image: url(../assets/images/icon-arrow-right.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-left: 1rem;
+}
+.generator:hover .img__arrow {
+    transition: 0.5s;
+    background-image: url(../assets/images/icon-arrow-right-neon.svg);
 }
 .error {
     font-size: 1.6rem !important;

@@ -71,56 +71,55 @@ function getSymbol() {
 }
 function combineArrayToString(maxCharacter, ...arrays) {
     let password = '';
-    let counterCharacter = 0;
-
+    let counterCharacter = 1;
+    
     for (const array of arrays) {
-        for (const element of array) {
-            
-            if (counterCharacter + 1 >= maxCharacter) {
+        for (const element of array) {         
+            password += element;
+            if (counterCharacter >= maxCharacter) {
                 return password;
             }
-            password += element;
             counterCharacter += 1;  
         }
     }
 }
 function generatePassword(params) {
     const numCharacter = params['lengthCharacter'];
-    const numAletorioArray = [];
-    const upperCaseLetters = [];
-    const lowerCaseLetters = [];
-    const symbols = [];
-    const se = Object.keys(params).length - 1;
+    const passwordArray = [];
+    const numcheckBoxChosen = Object.keys(params).length - 1;
     let numIteration = 0;
 
-    se !== 0 ? numIteration = Math.ceil(numCharacter / se) : numIteration = 0;
+    numcheckBoxChosen !== 0 ? numIteration = Math.ceil(numCharacter / numcheckBoxChosen) : numIteration = 0;
     
     if(numIteration === 0) return false;
     for (let index = 0; index < numIteration; index++) {
         if (params['uppercaseLetter']) {
-            upperCaseLetters.push(upperCaseLetter());
+            passwordArray.push(upperCaseLetter());
         }
         if (params['lowercaseLetter']) {
-            lowerCaseLetters.push(lowerCaseLetter());   
+            passwordArray.push(lowerCaseLetter());   
         }
         if (params['numbers']) {
-            numAletorioArray.push(Math.floor(Math.random() * numCharacter));   
+            passwordArray.push(Math.floor(Math.random() * 9) + 1);   
         }
         if (params['symbols']) {
-            symbols.push(getSymbol()); 
+            passwordArray.push(getSymbol()); 
         }      
     }
+    
     let pass = '';
     if (params['uppercaseLetter'] || params['lowercaseLetter'] || params['numbers'] || params['symbols']) {
-        pass = combineArrayToString(numCharacter, numAletorioArray, upperCaseLetters, lowerCaseLetters, symbols);
+        pass = combineArrayToString(numCharacter, passwordArray);
     }
     return pass;
 }
 function handlerGenerate(){
-    const objSettings = getSetting(); 
-    if (generatePassword(objSettings)) {
+    const objSettings = getSetting();
+    const passworGenerada = generatePassword(objSettings);  
+
+    if (passworGenerada) {
         spanShowPassword.classList.remove('error');
-        spanShowPassword.textContent = generatePassword(objSettings); 
+        spanShowPassword.textContent = passworGenerada; 
     }else {
         spanShowPassword.classList.add('error');
         spanShowPassword.textContent =  "Error: Debe elejir al menos 1.";
