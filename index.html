@@ -18,12 +18,12 @@
     </section>
 
     <section class="password__opcion">
-      <aside class="character__length">
+      <div class="character__length">
         <label for="range">Character Length</label> <span id="numRange"></span>
         <input type="range" id="range" name="range" min="4" max="20" value="10" oninput="changeColorBar(this)">
-      </aside>
+      </div>
 
-      <aside class="container__checkbox">
+      <div class="container__checkbox">
         <label for="uppercaseLetter">
           <input type="checkbox" id="uppercaseLetter" name="uppercaseLetter">
           <span class="checkmark"></span>
@@ -44,18 +44,18 @@
           <span class="checkmark"></span>
           Include Symbols
         </label>
-      </aside>
+      </div>
 
-      <aside class="password__result">
+      <div class="password__result">
         <span>Strength</span> 
-        <aside class="container__bars">
+        <div class="container__bars">
           <span id="textSecurity"></span>
-          <div class="bar" id="divuppercaseLetter"></div>
-          <div class="bar" id="divlowercaseLetter"></div>
-          <div class="bar" id="divuppercaseLetter"></div>
-          <div class="bar" id="divuppercaseLetter"></div>
-        </aside>
-      </aside>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+      </div>
       <button id="generate" class="generator">Generate <span class="img__arrow"></span><!-- <img class="icono" src="./assets/images/icon-arrow-right.svg" alt="icon of button"> --></button>
     </section>
   </main>
