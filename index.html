@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <script defer src="./app.js"></script>
+  <title>Frontend Mentor | Password generator app</title>
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1 class="title">Password Generator</h1>
+    </header>
+    <section class="password__copy">
+      <span id="showPassword"></span><img src="./assets/images/icon-copy.svg" alt="Icon copy" id="btnCopy">
+    </section>
+
+    <section class="password__opcion">
+      <aside class="character__length">
+        <label for="range">Character Length</label> <span id="numRange"></span>
+        <input type="range" id="range" name="range" min="0" max="20" value="10" oninput="changeColorBar(this)">
+      </aside>
+
+      <aside class="container__checkbox">
+        <label for="uppercaseLetter">
+          <input type="checkbox" id="uppercaseLetter" name="uppercaseLetter">
+          <span class="checkmark"></span>
+          Include Uppercase Letters
+        </label>
+        <label for="lowercaseLetter">
+          <input type="checkbox" id="lowercaseLetter" name="lowercaseLetter">
+          <span class="checkmark"></span>
+          Include Lowercase Letters
+        </label>
+        <label for="numbers">
+          <input type="checkbox" id="numbers" name="numbers">
+          <span class="checkmark"></span>
+          Include Numbers
+        </label>
+        <label for="symbols">
+          <input type="checkbox" id="symbols" name="symbols">
+          <span class="checkmark"></span>
+          Include Symbols
+        </label>
+      </aside>
+
+      <aside class="password__result">
+        <span>Strength</span> 
+        <aside class="container__bars">
+          <span id="textSecurity"></span>
+          <div class="bar" id="divuppercaseLetter"></div>
+          <div class="bar" id="divlowercaseLetter"></div>
+          <div class="bar" id="divuppercaseLetter"></div>
+          <div class="bar" id="divuppercaseLetter"></div>
+        </aside>
+      </aside>
+      <button id="generate" class="generator">Generate <img src="./assets/images/icon-arrow-right.svg" alt="icon of button"></button>
+    </section>
+  </main>
+</body>
+</html>

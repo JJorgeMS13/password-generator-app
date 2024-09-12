@@ -1,0 +1,202 @@
+@font-face {
+    font-family: "JetBrains Mono";
+    src: url('../assets/fonts/JetBrainsMono-VariableFont_wght.ttf') format('truetype'),
+         url('../assets/fonts/JetBrainsMono-Italic-VariableFont_wght.ttf') format('truetype');
+}
+
+:root {
+    --almost_white: #E6E5EA;
+    --neon_green: #A4FFAF;
+    --dark_gray: #24232C;
+    --very-dark_gray: #18171F;
+    --yellow: #F8CD65;
+    --gray: #817D92;
+    --orange: #FB7C58;
+    --red: #F64A4A;
+
+    font-size: 62.5%;
+}
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body {
+    background-color: #08070B;
+    color: var(--gray);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+.container {
+    margin: 6.35rem 1.6rem;
+}
+header .title {
+    font-size: 1.6rem;
+    text-align: center;
+    margin-bottom: 1.6rem;
+}
+.password__copy {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--dark_gray);
+    padding: 1.65rem 1.5rem;
+    margin-bottom: 1.6rem;
+}
+.password__copy span {
+    font-size: 2.4rem;
+}
+.password__copy img {
+    width: 1.75rem;
+    height: 2rem;
+}
+.password__opcion {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+    background-color: var(--dark_gray);
+}
+.character__length {
+    display: grid;
+    row-gap: .8rem;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 3rem;
+}
+.character__length span {
+    font-size: 2.4rem;
+    color: var(--neon_green);
+    justify-self: flex-end;
+}
+/*-------------estilos para la barra del rango---------------- */
+ .character__length input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    height: .8rem;
+    background: var(--very-dark_gray);
+    grid-column: 1 / -1;
+}
+.character__length input[type="range"]::-webkit-slider-runnable-track {
+    height: .8rem;
+}
+/* -------estilos para el thumb(control deslizante)-------- */
+.character__length input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 2.8rem;
+    height: 2.8rem;
+    background: var(--gray);
+    border-radius: 50%;
+    margin-top: -1rem;
+}
+.container__checkbox {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    margin-bottom: 3rem;
+}
+.container__checkbox label {
+    display: flex;
+    gap: 1.5rem;
+}
+.container__checkbox input[type="checkbox"] {
+    display: none;
+}
+.container__checkbox label .checkmark {
+    width: 2rem;
+    height: 2rem;
+    border: 2px solid var(--gray);
+    display: inline-block;
+}
+.container__checkbox label input[type="checkbox"]:checked + .checkmark {
+    border: none;
+    background-color: var(--neon_green);
+    background-image: url('../assets/images/icon-check.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 70% 70%;
+}
+.password__result {
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.65rem 1.5rem;
+    background-color: var(--very-dark_gray);
+    margin-bottom: 1.5rem;
+}
+.container__bars { 
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.container__bars div {
+    width: 1rem;
+    height: 2.8rem;
+    border: 2px solid var(--gray);
+}
+.generator {
+    text-transform: uppercase;
+    display: flex;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 1.6rem;
+    font-weight: 700;
+    background-color: var(--neon_green);
+    justify-content: center;
+    align-items: center;
+    height: 5.6rem;
+    border: none;
+}
+.generator img {
+    margin-left: 1.2rem;
+}
+.error {
+    font-size: 1.6rem !important;
+    color: var(--red);
+}
+/* ------------------(>768)---------------------- */
+@media screen and (min-width: 48rem){
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+    header {
+        width: 54rem;
+    }
+    header .title {
+        font-size: 2.4rem;
+    }
+    .password__copy {
+        width: 54rem;
+    }
+    .password__copy span {
+        font-size: 3.2rem;
+    }
+    .password__copy img {
+        width: 2.1rem;
+        height: 2.4rem;
+    }
+    .password__opcion {
+        width: 54rem;
+    }
+    .character__length span {
+        font-size: 3.2rem;
+    }
+    .character__length label {
+        font-size: 1.8rem;
+    }
+    .container__checkbox label {
+        font-size: 1.8rem;
+    }
+    .password__result span {
+        font-size: 1.8rem;
+    }
+    .generator {
+        height: 6.5rem;
+        font-size: 1.8rem;
+    }
+}
